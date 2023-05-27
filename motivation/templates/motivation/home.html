@@ -1,0 +1,536 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero section -->
+<section class="custom-container text-center mx-auto">
+    <div class="hero-content mb-4">  <!-- Add mb-4 to increase the bottom margin -->
+        <h1 class="display-4 mb-4">Welcome to Celfyre</h1>  <!-- Add mb-3 to increase the bottom margin -->
+        <p class="lead mb-4">Discover the Power of Personal Narratives. Unlock your Potential Today.</p>  <!-- Add mb-2 to increase the bottom margin -->
+        <p class="text-center mt-4">At Celfyre, we believe that everyone holds the key to their own growth and success. But sometimes, unlocking that potential requires a little nudge - a catalyst that sparks change. That’s where we come in.</p> <!-- Add mt-2 to increase the top margin -->
+    </div>
+    <div class="icon-container mb-4">
+    <a href="#">
+        <img src="{% static 'images/celfyre-icon.png' %}" alt="celfyre" class="icon-image">
+    </a>
+    </div>
+    <div class="row">
+            <h2>Why Celfyre?</h2>
+            <p>Celfyre is a unique personal development tool designed to help you visualize your goals through personalized motivational stories. By turning your aspirations into engaging narratives accompanied by immersive audio, we help you cement your commitment and make your dreams feel more attainable.</p>
+    </div>
+    <div class="icon-container mb-4">
+    <a href="#">
+        <img src="{% static 'images/celfyre-icon.png' %}" alt="celfyre" class="icon-image">
+    </a>
+    </div>
+    <div class="row">
+        <p class="lead">Experience the power of personal narratives with Celfyre by listening to our sample stories.</p>
+    </div>
+</section>
+
+<!-- Audio Player section -->
+<section id="generate" class="player-container my-5">
+    <div id="blue-playlist-container">
+
+      <!-- Amplitude Player -->
+      <div id="amplitude-player">
+
+        <!-- Left Side Player -->
+        <div id="amplitude-left">
+          <img data-amplitude-song-info="cover_art_url" class="album-art"/>
+          <div class="amplitude-visualization" id="large-visualization">
+
+            </div>
+          <div id="player-left-bottom">
+            <div id="time-container">
+              <span class="current-time">
+                <span class="amplitude-current-minutes" ></span>:<span class="amplitude-current-seconds"></span>
+              </span>
+              <div id="progress-container">
+                <div class="amplitude-wave-form">
+
+                        </div>
+                <input type="range" class="amplitude-song-slider"/>
+                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="0"></progress>
+              </div>
+              <span class="duration">
+                <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+              </span>
+            </div>
+
+            <div id="control-container">
+              <div id="repeat-container">
+                <div class="amplitude-repeat" id="repeat"></div>
+                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle"></div>
+              </div>
+
+              <div id="central-control-container">
+                <div id="central-controls">
+                  <div class="amplitude-prev" id="previous"></div>
+                  <div class="amplitude-play-pause" id="play-pause"></div>
+                  <div class="amplitude-next" id="next"></div>
+                </div>
+              </div>
+
+              <div id="volume-container">
+                <div class="volume-controls">
+                  <div class="amplitude-mute amplitude-not-muted"></div>
+                  <input type="range" class="amplitude-volume-slider"/>
+                  <div class="ms-range-fix"></div>
+                </div>
+                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
+              </div>
+            </div>
+
+            <div id="meta-container">
+              <span data-amplitude-song-info="name" class="song-name"></span>
+
+              <div class="song-artist-album">
+                <span data-amplitude-song-info="artist"></span>
+                <span data-amplitude-song-info="album"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Left Side Player -->
+
+        <!-- Right Side Player -->
+        <div id="amplitude-right">
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="0">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Run a marathon</span>
+              <span class="song-artist">Habit: Go running at night</span>
+            </div>
+            <a href="https://switchstancerecordings.bandcamp.com/track/risin-high-feat-raashan-ahmad" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">2:12</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="1">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Be a better parent</span>
+              <span class="song-artist">Habit: Be patient with the kids</span>
+            </div>
+            <a href="https://lorn.bandcamp.com/" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">3:16</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="2">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Get a promotion</span>
+              <span class="song-artist">Habit: Work on my priorities</span>
+            </div>
+            <a href="https://lorn.bandcamp.com/" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">3:32</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="3">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Loose 10 pounds</span>
+              <span class="song-artist">Habit: Don't overeat at night</span>
+            </div>
+            <a href="https://switchstancerecordings.bandcamp.com/track/i-came-running" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">3:30</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="4">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Become more mindful</span>
+              <span class="song-artist">Habit: Daily meditation practise</span>
+            </div>
+            <a href="https://emancipator.bandcamp.com" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">5:12</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="5">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Be happier</span>
+              <span class="song-artist">Habit: do a gratitude journal</span>
+            </div>
+            <a href="https://pglost.bandcamp.com/track/terrain" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">2:29</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="6">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Be a better spouse</span>
+              <span class="song-artist">Habit: Buy a present once a week</span>
+            </div>
+            <a href="https://russiancircles.bandcamp.com/track/vorel" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">5:29</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="7">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Be a better friend</span>
+              <span class="song-artist">Habit: Call someone once a week</span>
+            </div>
+            <a href="http://jimkata.bandcamp.com/track/intro-sweet-glory" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">2:39</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="8">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Be more generous</span>
+              <span class="song-artist">Habit: Donate to homeless people on the street</span>
+            </div>
+            <a href="https://littlepeople.bandcamp.com/track/offcut-6" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">1:00</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="9">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Be more productive</span>
+              <span class="song-artist">Habit: Get enough sleep</span>
+            </div>
+            <a href="https://emancipator.bandcamp.com/track/dusk-to-dawn-2" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">5:25</span>
+          </div>
+          <div class="song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="10">
+            <div class="song-now-playing-icon-container">
+              <div class="play-button-container">
+
+              </div>
+              <img class="now-playing" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/now-playing.svg"/>
+            </div>
+            <div class="song-meta-data">
+              <span class="song-title">Goal: Develop healthy lifestyle</span>
+              <span class="song-artist">Habit: Don't eat junk food</span>
+            </div>
+            <a href="https://emancipator.bandcamp.com/track/anthem" class="bandcamp-link" target="_blank">
+              <img class="bandcamp-grey" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-grey.svg"/>
+              <img class="bandcamp-white" src="https://521dimensions.com/img/open-source/amplitudejs/blue-player/bandcamp-white.svg"/>
+            </a>
+            <span class="song-duration">5:40</span>
+          </div>
+        </div>
+        <!-- End Right Side Player -->
+      </div>
+      <!-- End Amplitdue Player -->
+    </div>
+    </div>
+</section>
+
+<!-- How it Works section -->
+<section class="custom-container text-center mx-auto">
+    <div class="icon-container mb-4">
+    <a href="#">
+        <img src="{% static 'images/celfyre-icon.png' %}" alt="celfyre" class="icon-image">
+    </a>
+    </div>
+    <div class="row">
+            <h2>How does it work?</h2>
+            <p>You provide us with a goal and a habit you want to develop. Be as specific as you can. Instead “get fit”, you might aim for “run a 10k race”. Instead of “eat healthier”, your habit might be “eat 5 servings of fruits an vegetables each day.” Start by generating you personal story below:</p>
+    </div>
+    <div class="icon-container mb-4">
+        <a href="#"><img src="{% static 'images/celfyre-icon.png' %}" alt="celfyre" class="icon-image"></a>
+    </div>
+</section>
+
+<!-- Generate a Motivational Story section -->
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h2 class="mt-2">Generate a Motivational Story</h2>
+        <form id="story-form" method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_goal">Goal:</label>
+                {{ form.goal.errors }}
+                {{ form.goal }}
+            </div>
+            <div class="form-group">
+                <label for="id_habit">Habit:</label>
+                {{ form.habit.errors }}
+                {{ form.habit }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                {{ form.email.errors }}
+                {{ form.email }}
+            </div>
+            <button id="generate-story-btn" type="submit" class="btn btn-primary">Generate Story</button>
+            <div id="spinner" class="spinner-border text-primary" role="status" style="display:none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </form>
+        <div id="email-pending" class="alert alert-info" role="alert" style="display:none;">
+            Your motivational story is being created! An email will be sent to you within a few minutes.
+        </div>
+    </div>
+</div>
+
+<!-- Contact section -->
+<section class="custom-container text-center mx-auto">
+    <div class="icon-container mb-4">
+        <a href="#"><img src="{% static 'images/celfyre-icon.png' %}" alt="celfyre" class="icon-image"></a>
+    </div>
+    <h2>Got Questions? We’re Here to Help</h2>
+    <p>Whether you’re curious about our process, interested in our philosophy, or simply want to share your feedback, we’d love to hear from you. Reach out today, and we’ll get back to you as soon as we can.</p>
+
+    <h3>Contact Us</h3>
+    <p>Click the button below to send us an email:</p>
+    <a href="mailto:info@celfyre.com" class="btn btn-primary">Send Email</a>
+
+    <p class="mt-4">We're excited to start this journey with you.</p>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    $('#story-form').submit(function(event) {
+        event.preventDefault();
+        $('#spinner').show();
+        $('#generate-story-btn').prop('disabled', true);
+
+        var formData = $(this).serialize();
+
+        $.post("{% url 'motivation:home' %}", formData, function(response) {
+            $('#spinner').hide();
+            $('#generate-story-btn').prop('disabled', false);
+            $('#email-pending').show();
+        }).fail(function() {
+            $('#spinner').hide();
+            $('#generate-story-btn').prop('disabled', false);
+            alert('An error occurred. Please try again.');
+        });
+    });
+/*
+  When the bandcamp link is pressed, stop all propagation so AmplitudeJS doesn't
+  play the song.
+*/
+let bandcampLinks = document.getElementsByClassName('bandcamp-link');
+
+for( var i = 0; i < bandcampLinks.length; i++ ){
+  bandcampLinks[i].addEventListener('click', function(e){
+    e.stopPropagation();
+  });
+}
+
+
+let songElements = document.getElementsByClassName('song');
+
+for( var i = 0; i < songElements.length; i++ ){
+  /*
+    Ensure that on mouseover, CSS styles don't get messed up for active songs.
+  */
+  songElements[i].addEventListener('mouseover', function(){
+    this.style.backgroundColor = '#00A0FF';
+
+    this.querySelectorAll('.song-meta-data .song-title')[0].style.color = '#FFFFFF';
+    this.querySelectorAll('.song-meta-data .song-artist')[0].style.color = '#FFFFFF';
+
+    if( !this.classList.contains('amplitude-active-song-container') ){
+      this.querySelectorAll('.play-button-container')[0].style.display = 'block';
+    }
+
+    this.querySelectorAll('img.bandcamp-grey')[0].style.display = 'none';
+    this.querySelectorAll('img.bandcamp-white')[0].style.display = 'block';
+    this.querySelectorAll('.song-duration')[0].style.color = '#FFFFFF';
+  });
+
+  /*
+    Ensure that on mouseout, CSS styles don't get messed up for active songs.
+  */
+  songElements[i].addEventListener('mouseout', function(){
+    this.style.backgroundColor = '#FFFFFF';
+    this.querySelectorAll('.song-meta-data .song-title')[0].style.color = '#272726';
+    this.querySelectorAll('.song-meta-data .song-artist')[0].style.color = '#607D8B';
+    this.querySelectorAll('.play-button-container')[0].style.display = 'none';
+    this.querySelectorAll('img.bandcamp-grey')[0].style.display = 'block';
+    this.querySelectorAll('img.bandcamp-white')[0].style.display = 'none';
+    this.querySelectorAll('.song-duration')[0].style.color = '#607D8B';
+  });
+
+  /*
+    Show and hide the play button container on the song when the song is clicked.
+  */
+  songElements[i].addEventListener('click', function(){
+    this.querySelectorAll('.play-button-container')[0].style.display = 'none';
+  });
+}
+
+/*
+  Initializes AmplitudeJS
+*/
+Amplitude.init({
+  "songs": [
+    {
+      "name": "Celfyre Motivation Track",
+      "artist": "Goal: Run a marathon",
+      "album": "Habit: Go running at night",
+      "url": "{% static 'audio/celfyre-marathon.mp3' %}",
+      "cover_art_url": "{% static 'images/marathon.png' %}",
+    },
+    {
+      "name": "Celfyre Motivation Track",
+      "artist": "Goal: Better Parent",
+      "album": "Habit: Patient with the kids",
+      "url": "{% static 'audio/sample-motivation-track-2.mp3' %}",
+      "cover_art_url": "{% static 'images/father.png' %}",
+    },
+    {
+      "name": "Anvil",
+      "artist": "Lorn",
+      "album": "Anvil",
+      "url": "https://521dimensions.com/song/LORN - ANVIL.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/anvil.jpg"
+    },
+    {
+      "name": "I Came Running",
+      "artist": "Ancient Astronauts",
+      "album": "We Are to Answer",
+      "url": "https://521dimensions.com/song/ICameRunning-AncientAstronauts.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg"
+    },
+    {
+      "name": "First Snow",
+      "artist": "Emancipator",
+      "album": "Soon It Will Be Cold Enough",
+      "url": "https://521dimensions.com/song/FirstSnow-Emancipator.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg"
+    },
+    {
+      "name": "Terrain",
+      "artist": "pg.lost",
+      "album": "Key",
+      "url": "https://521dimensions.com/song/Terrain-pglost.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/key.jpg"
+    },
+    {
+      "name": "Vorel",
+      "artist": "Russian Circles",
+      "album": "Guidance",
+      "url": "https://521dimensions.com/song/Vorel-RussianCircles.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/guidance.jpg"
+    },
+    {
+      "name": "Intro / Sweet Glory",
+      "artist": "Jimkata",
+      "album": "Die Digital",
+      "url": "https://521dimensions.com/song/IntroSweetGlory-Jimkata.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/die-digital.jpg"
+    },
+    {
+      "name": "Offcut #6",
+      "artist": "Little People",
+      "album": "We Are But Hunks of Wood Remixes",
+      "url": "https://521dimensions.com/song/Offcut6-LittlePeople.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-but-hunks-of-wood.jpg"
+    },
+    {
+      "name": "Dusk To Dawn",
+      "artist": "Emancipator",
+      "album": "Dusk To Dawn",
+      "url": "https://521dimensions.com/song/DuskToDawn-Emancipator.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/from-dusk-to-dawn.jpg"
+    },
+    {
+      "name": "Anthem",
+      "artist": "Emancipator",
+      "album": "Soon It Will Be Cold Enough",
+      "url": "https://521dimensions.com/song/Anthem-Emancipator.mp3",
+      "cover_art_url": "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg"
+    }
+  ],
+  "callbacks": {
+        'play': function(){
+            document.getElementById('album-art').style.visibility = 'hidden';
+            document.getElementById('large-visualization').style.visibility = 'visible';
+        },
+
+        'pause': function(){
+            document.getElementById('album-art').style.visibility = 'visible';
+            document.getElementById('large-visualization').style.visibility = 'hidden';
+        }
+    },
+  waveforms: {
+    sample_rate: 50
+  }
+});
+document.getElementById('large-visualization').style.height = document.getElementById('album-art').offsetWidth + 'px';
+});
+</script>
+{% endblock %}
