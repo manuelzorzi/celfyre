@@ -136,7 +136,6 @@ django_heroku.settings(locals())
 
 import dramatiq
 from dramatiq.brokers.redis import RedisBroker
-import os
 
 redis_url = os.environ.get('REDIS_URL', 'redis://localhost:6379')
 broker = RedisBroker.from_url(redis_url)
